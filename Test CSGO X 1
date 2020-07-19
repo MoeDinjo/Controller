@@ -1,0 +1,58 @@
+}	}
+
+
+// External factory function	// External factory function
+void* FeedbackXBOBTFactory(CFAllocatorRef allocator, CFUUIDRef typeID)	extern "C" void* FeedbackXBOBTFactory(CFAllocatorRef allocator, CFUUIDRef typeID)
+{	{
+	void* result = NULL;		void* result = NULL;
+	if (CFEqual(typeID, kIOForceFeedbackLibTypeID))		if (CFEqual(typeID, kIOForceFeedbackLibTypeID))
+ 10  XBOBTFF/Info.plist 
+@@ -12,12 +12,16 @@
+	<string>6.0</string>		<string>6.0</string>
+	<key>CFBundleName</key>		<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>		<string>$(PRODUCT_NAME)</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundlePackageType</key>		<key>CFBundlePackageType</key>
+	<string>BNDL</string>		<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>		<key>CFBundleShortVersionString</key>
+	<string>1.0</string>		<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>CFBundleVersion</key>		<key>CFBundleVersion</key>
+	<string>1</string>		<string>${CURRENT_PROJECT_VERSION}</string>
+	<key>CFPlugInDynamicRegistration</key>
+	<false/>
+	<key>CFPlugInFactories</key>		<key>CFPlugInFactories</key>
+	<dict>		<dict>
+		<key>0F793F56-8C17-4BA0-9201-D52FEC6C2702</key>			<key>0F793F56-8C17-4BA0-9201-D52FEC6C2702</key>
+@@ -32,7 +36,5 @@
+	</dict>		</dict>
+	<key>NSHumanReadableCopyright</key>		<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2017 C.W. Betts. All rights reserved.</string>		<string>Copyright © 2017 C.W. Betts. All rights reserved.</string>
+	<key>NSPrincipalClass</key>	
+	<string></string>	
+</dict>	</dict>
+</plist>	</plist>
+ 8  XboxOneBluetooth/Info.plist 
+@@ -13,11 +13,11 @@
+	<key>CFBundlePackageType</key>		<key>CFBundlePackageType</key>
+	<string>KEXT</string>		<string>KEXT</string>
+	<key>CFBundleShortVersionString</key>		<key>CFBundleShortVersionString</key>
+	<string>1.0</string>		<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>CFBundleSignature</key>		<key>CFBundleSignature</key>
+	<string>????</string>		<string>????</string>
+	<key>CFBundleVersion</key>		<key>CFBundleVersion</key>
+	<string>1</string>		<string>${CURRENT_PROJECT_VERSION}</string>
+	<key>IOKitPersonalities</key>		<key>IOKitPersonalities</key>
+	<dict>		<dict>
+		<key>XboxOneBluetooth</key>			<key>XboxOneBluetooth</key>
+@@ -37,8 +37,10 @@
+			<string>IOBluetoothL2CAPChannel</string>				<string>IOBluetoothL2CAPChannel</string>
+			<key>PSM</key>				<key>PSM</key>
+			<integer>17</integer>				<integer>17</integer>
+			<key>IOKitDebug</key>
+			<integer>65535</integer>
+			<key>ProductID</key>				<key>ProductID</key>
+			<integer>736</integer>				<integer>765</integer>
+			<key>VendorID</key>				<key>VendorID</key>
+			<integer>1118</integer>				<integer>1118</integer>
+		</dict>			</dict>
